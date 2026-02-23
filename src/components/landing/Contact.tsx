@@ -4,8 +4,7 @@ import { Mail, Clock, MapPin } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-
-const mundoImg = "/assets/mundo.png";
+import Image from "next/image";
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -151,9 +150,11 @@ export function Contact() {
             ref={right.ref as React.RefObject<HTMLDivElement>}
             className={`flex items-center justify-center lg:justify-end animate-on-scroll-right ${right.visible ? "is-visible" : ""}`}
           >
-            <img
-              src={mundoImg}
+            <Image
+              src="/assets/mundo.png"
               alt="Ciudadanía europea - conectando el mundo"
+              width={448}
+              height={448}
               className="w-full max-w-md object-contain drop-shadow-2xl"
             />
           </div>

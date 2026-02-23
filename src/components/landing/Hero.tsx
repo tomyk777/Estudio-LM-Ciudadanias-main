@@ -1,7 +1,5 @@
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
-
-const heroImg = "/assets/hero-rome.jpg";
-const logoImg = "/assets/logo.png";
 
 export function Hero() {
   return (
@@ -9,17 +7,29 @@ export function Hero() {
       id="inicio"
       className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
     >
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImg})` }}
+      {/* Background image — priority + fill para LCP óptimo */}
+      <Image
+        src="/assets/hero-rome.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        quality={75}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-32 flex flex-col items-center">
-        <img src={logoImg} alt="Estudio Integral LM" className="h-44 md:h-56 w-auto object-contain mb-8 animate-fade-in drop-shadow-lg" />
+        <Image
+          src="/assets/logo.png"
+          alt="Estudio Integral LM"
+          width={224}
+          height={224}
+          priority
+          className="h-44 md:h-56 w-auto object-contain mb-8 animate-fade-in drop-shadow-lg"
+        />
 
         <p className="section-label text-gold-light mb-6 animate-fade-in">
           Vicente López — Buenos Aires

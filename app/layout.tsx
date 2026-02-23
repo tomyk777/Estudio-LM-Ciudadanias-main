@@ -1,6 +1,22 @@
 import type { Metadata } from "next";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import "@/index.css";
 import { Providers } from "./providers";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Estudio Integral LM — Ciudadanía Italiana y Española",
@@ -23,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${inter.variable} ${cormorant.variable}`}>
       <body>
         <Providers>{children}</Providers>
       </body>
