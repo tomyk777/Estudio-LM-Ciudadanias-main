@@ -42,14 +42,23 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 isolation-isolate transition-all duration-500 ${
         scrolled ? "bg-charcoal shadow-lg py-2" : "bg-transparent py-4"
       }`}
+      style={{ isolation: "isolate" }}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3">
-          <Image src="/assets/logo.png" alt="Estudio Integral LM" width={80} height={80} className="h-20 w-auto object-contain" />
+          <Image
+            src="/assets/logo.png"
+            alt="Estudio Integral LM"
+            width={80}
+            height={80}
+            className={`w-auto object-contain transition-all duration-500 ${
+              scrolled ? "h-10 md:h-14" : "h-14 md:h-20"
+            }`}
+          />
         </a>
 
         {/* Desktop nav */}

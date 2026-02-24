@@ -51,7 +51,7 @@ export function Contact() {
             className={`flex flex-col gap-6 animate-on-scroll-left ${left.visible ? "is-visible" : ""}`}
           >
             {/* Info cards grid */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <a
                 href="https://wa.me/5491167061739?text=Hola%20Laura!%20Vi%20tu%20sitio%20web%20y%20quiero%20consultar%20sobre%20el%20tr%C3%A1mite%20de%20ciudadan%C3%ADa."
                 target="_blank"
@@ -74,11 +74,11 @@ export function Contact() {
                 className="value-badge hover:border-l-gold transition-colors group"
               >
                 <Mail size={20} className="text-gold flex-shrink-0" />
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-0.5">
                     Email
                   </p>
-                  <p className="text-charcoal font-semibold text-sm group-hover:text-gold transition-colors">
+                  <p className="text-charcoal font-semibold text-sm group-hover:text-gold transition-colors break-all">
                     Lmelluso@yahoo.it
                   </p>
                 </div>
