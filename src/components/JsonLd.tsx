@@ -1,5 +1,5 @@
 export function JsonLd() {
-  const SITE_URL = "https://estudiointegrallm.com.ar";
+  const SITE_URL = "https://estudiolmciudadanias.com";
 
   const localBusiness = {
     "@context": "https://schema.org",
