@@ -183,6 +183,48 @@ export function Services() {
             </a>
           </div>
         </div>
+
+        {/* Curso de Italiano box */}
+        <div
+          className="border-2 bg-white rounded-sm overflow-hidden mt-6 animate-on-scroll is-visible"
+          style={{ borderColor: "hsl(var(--gold))", boxShadow: "var(--shadow-gold)" }}
+        >
+          {/* Italian flag accent bar */}
+          <div className="flex h-[4px] w-full">
+            <div className="flex-1" style={{ background: "#009246" }} />
+            <div className="flex-1" style={{ background: "#f3f4f6" }} />
+            <div className="flex-1" style={{ background: "#CE2B37" }} />
+          </div>
+          <div className="px-6 py-6 md:px-10 md:py-8">
+            <div className="flex items-center gap-3 mb-3">
+              <Languages size={28} className="text-gold flex-shrink-0" />
+              <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal">
+                Curso de Italiano
+              </h3>
+            </div>
+            <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-4">
+              Aprendé italiano con nuestros cursos diseñados para todos los niveles. Ideal para quienes están en proceso de ciudadanía o quieren conectar con sus raíces.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-5">
+              {["Inicial", "Intermedio", "Avanzado"].map((nivel) => (
+                <span
+                  key={nivel}
+                  className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium"
+                >
+                  {nivel}
+                </span>
+              ))}
+            </div>
+            <a
+              href="https://wa.me/5491167061739?text=Hola%20Laura!%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20cursos%20de%20italiano.%20%C2%BFMe%20pod%C3%A9s%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-block"
+            >
+              Consultanos
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

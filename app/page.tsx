@@ -6,10 +6,12 @@ import { Services } from "@/components/landing/Services";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Contact } from "@/components/landing/Contact";
 import { Footer } from "@/components/landing/Footer";
+import { JsonLd } from "@/components/JsonLd";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <JsonLd />
       <Navbar />
       <Hero />
       <Stats />
