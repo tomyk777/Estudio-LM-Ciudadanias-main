@@ -107,6 +107,10 @@ export function Footer() {
           </p>
           <p>Ciudadanía Italiana y Española — Vicente López, Buenos Aires</p>
         </div>
+
+        <div className="pt-4 text-center text-[11px] text-warm-beige/30">
+          <p>Desarrollado por <a href="https://www.linkedin.com/in/tom%C3%A1s-kreczmer-b5682a37a/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Tomas Kreczmer</a></p>
+        </div>
       </div>
 
       {/* WhatsApp floating button */}
