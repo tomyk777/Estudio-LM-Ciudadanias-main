@@ -6,29 +6,24 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const testimonials = [
   {
-    name: "Martín Rossi",
-    city: "Buenos Aires, Argentina",
-    text: "Laura nos acompañó en todo el proceso de ciudadanía italiana. Fue clarísima, súper organizada y nos mantuvo al tanto de cada paso. ¡Hoy somos ciudadanos italianos!",
+    name: "Marcelo Antonini",
+    city: "Florida, Buenos Aires",
+    text: "Con Laura Melluso mi familia particularmente y la familia que nos la recomendó en el año 2015, todas las ciudadanías que solicitamos (3 en nuestra familia) se resolvieron positivamente. La dedicación y la confianza en estos trámites son clave. Cuenta además con un grupo de trabajo de excelencia.",
   },
   {
-    name: "Camila Ferretti",
-    city: "Rosario, Argentina",
-    text: "Increíble la dedicación y el profesionalismo. Me gestionó la búsqueda de actas en Italia que yo no podía conseguir. Totalmente recomendable.",
+    name: "Martin Gerbasi",
+    city: "Villa Martelli, Buenos Aires",
+    text: "Empecé mi carpeta con Laura sin tener idea siquiera del pueblito donde nació mi bisabuelo y en pocos meses logró encontrarla!!!! Lloré de alegría y emoción ya que eso sería el comienzo de una nueva etapa para mí y mi hija al tramitar la ciudadanía italiana en Italia. Siempre voy a estar agradecido por su trabajo y profesionalidad ya que cuando se presentó la documentación estaba todo en orden. Hoy gracias a esto trabajo en el exterior.",
   },
   {
-    name: "Santiago López",
-    city: "Montevideo, Uruguay",
-    text: "Hice todo el trámite a distancia y fue impecable. Laura se encargó de cada detalle, desde las traducciones hasta el turno consular. Excelente servicio.",
+    name: "Virginia Feminella",
+    city: "Luján, Buenos Aires",
+    text: "Gracias Laura por todo el acompañamiento y la ayuda en sacar mi ciudadanía italiana! Celeridad y responsabilidad en todo mi proceso. Mil gracias por todo. Super recomendable.",
   },
   {
-    name: "Florencia Gómez",
-    city: "Madrid, España",
-    text: "Gracias a Laura pude obtener mi ciudadanía italiana por matrimonio. Un proceso que parecía imposible se hizo simple con su asesoramiento.",
-  },
-  {
-    name: "Diego Colombo",
-    city: "Córdoba, Argentina",
-    text: "La inscripción en el AIRE y el pasaporte los tramitó rapidísimo. Muy profesional y siempre disponible para resolver dudas.",
+    name: "Federico Cerisoli",
+    city: "Coppet, Suiza",
+    text: "Laura me ayuda desde 2019 con todos mis trámites. Viviendo en Suiza me es indispensable contar con alguien confiable, con calidad y gran sagacidad para encontrar los documentos personales de mi familia en Argentina. Ella encuentra lo que otros no encuentran, trabajando siempre con mucha pasión y velocidad. Laura ha sido clave en mi trámite de naturalización italiana. La super recomiendo.",
   },
 ];
 
