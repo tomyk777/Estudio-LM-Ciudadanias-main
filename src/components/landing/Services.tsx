@@ -206,7 +206,7 @@ export function Services() {
               Aprendé italiano con nuestros cursos diseñados para todos los niveles. Ideal para quienes están en proceso de ciudadanía o quieren conectar con sus raíces.
             </p>
             <div className="flex flex-wrap gap-2 mb-5">
-              {["Inicial", "Intermedio", "Avanzado"].map((nivel) => (
+              {["Inicial", "Intermedio", "Avanzado", "Intensivo B1 Ciudadanía por Matrimonio"].map((nivel) => (
                 <span
                   key={nivel}
                   className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium"
