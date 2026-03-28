@@ -15,7 +15,7 @@ export function Hero() {
         priority
         sizes="100vw"
         className="object-cover object-center"
-        quality={75}
+        quality={70}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
@@ -27,7 +27,8 @@ export function Hero() {
           alt="Estudio Integral LM"
           width={224}
           height={224}
-          priority
+          sizes="(max-width: 768px) 176px, 224px"
+          quality={65}
           className="h-44 md:h-56 w-auto object-contain mb-8 animate-fade-in drop-shadow-lg"
         />
 

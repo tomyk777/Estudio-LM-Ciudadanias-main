@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
@@ -55,6 +54,8 @@ export function Navbar() {
             alt="Estudio Integral LM"
             width={80}
             height={80}
+            sizes="(max-width: 768px) 56px, 80px"
+            quality={65}
             className={`w-auto object-contain transition-all duration-500 ${
               scrolled ? "h-10 md:h-14" : "h-14 md:h-20"
             }`}

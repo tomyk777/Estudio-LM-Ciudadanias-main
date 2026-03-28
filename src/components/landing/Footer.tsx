@@ -32,7 +32,15 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 pb-12 border-b border-charcoal-mid">
           {/* Logo & description */}
           <div className={`flex flex-col gap-5 animate-on-scroll delay-100 ${visible ? "is-visible" : ""}`}>
-            <Image src="/assets/logo.png" alt="Estudio Integral LM" width={200} height={112} className="h-28 w-auto object-contain" />
+            <Image
+              src="/assets/logo.png"
+              alt="Estudio Integral LM"
+              width={200}
+              height={112}
+              sizes="(max-width: 768px) 160px, 200px"
+              quality={65}
+              className="h-28 w-auto object-contain"
+            />
             <p className="text-warm-beige/75 text-sm leading-relaxed max-xs">
               Gestoría especializada en ciudadanía italiana y española. Más de 20 años
               acompañando familias en todo el mundo.

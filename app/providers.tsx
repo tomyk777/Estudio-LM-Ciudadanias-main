@@ -1,22 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+import dynamic from "next/dynamic";
+
+const Toaster = dynamic(() => import("@/components/ui/toaster").then((m) => m.Toaster), {
+  ssr: false,
+});
+const Sonner = dynamic(() => import("@/components/ui/sonner").then((m) => m.Toaster), {
+  ssr: false,
+});
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  // useState evita recrear el QueryClient en cada render (patrón recomendado en Next.js)
-  const [queryClient] = useState(() => new QueryClient());
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        {children}
-      </TooltipProvider>
-    </QueryClientProvider>
+    <>
+      {children}
+      <Toaster />
+      <Sonner />
+    </>
   );
 }
