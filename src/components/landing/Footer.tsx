@@ -33,7 +33,7 @@ export function Footer() {
           {/* Logo & description */}
           <div className={`flex flex-col gap-5 animate-on-scroll delay-100 ${visible ? "is-visible" : ""}`}>
             <Image src="/assets/logo.png" alt="Estudio Integral LM" width={200} height={112} className="h-28 w-auto object-contain" />
-            <p className="text-warm-beige/60 text-sm leading-relaxed max-xs">
+            <p className="text-warm-beige/75 text-sm leading-relaxed max-xs">
               Gestoría especializada en ciudadanía italiana y española. Más de 20 años
               acompañando familias en todo el mundo.
             </p>
@@ -45,7 +45,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center border border-charcoal-mid text-warm-beige/60 hover:text-gold hover:border-gold transition-colors"
+                  className="w-9 h-9 flex items-center justify-center border border-charcoal-mid text-warm-beige/80 hover:text-gold hover:border-gold transition-colors"
                 >
                   <Icon size={16} />
                 </a>
@@ -56,7 +56,7 @@ export function Footer() {
           {/* Links */}
           <div className={`animate-on-scroll delay-200 ${visible ? "is-visible" : ""}`}>
             <p className="section-label text-gold mb-5">Servicios</p>
-            <ul className="flex flex-col gap-3 text-sm text-warm-beige/60">
+            <ul className="flex flex-col gap-3 text-sm text-warm-beige/75">
               {[
                 "Carpetas de ciudadanía italiana",
                 "Carpetas de ciudadanía española",
@@ -79,7 +79,7 @@ export function Footer() {
                   href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20sobre%20sus%20servicios%20de%20ciudadan%C3%ADa."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-warm-beige/60 hover:text-gold transition-colors"
+                  className="flex items-center gap-2 text-warm-beige/75 hover:text-gold transition-colors"
                 >
                   <WhatsAppIcon size={15} />
                   +54 11 6706 1739
@@ -88,19 +88,19 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:Lmelluso@yahoo.it"
-                  className="text-warm-beige/60 hover:text-gold transition-colors"
+                  className="text-warm-beige/75 hover:text-gold transition-colors"
                 >
                   Lmelluso@yahoo.it
                 </a>
               </li>
-              <li className="text-warm-beige/60">Vicente López, Buenos Aires</li>
-              <li className="text-warm-beige/60">Lunes a viernes — 9 a 15 hs</li>
+              <li className="text-warm-beige/75">Vicente López, Buenos Aires</li>
+              <li className="text-warm-beige/75">Lunes a viernes — 9 a 15 hs</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-warm-beige/40">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-warm-beige/65">
           <p>
             © {new Date().getFullYear()} Estudio Integral — Laura Karina Melluso.
             Todos los derechos reservados.
@@ -108,7 +108,7 @@ export function Footer() {
           <p>Ciudadanía Italiana y Española — Vicente López, Buenos Aires</p>
         </div>
 
-        <div className="pt-4 text-center text-[11px] text-warm-beige/30">
+        <div className="pt-4 text-center text-[11px] text-warm-beige/60">
           <p>Desarrollado por <a href="https://www.linkedin.com/in/tom%C3%A1s-kreczmer-b5682a37a/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Tomas Kreczmer</a></p>
         </div>
       </div>
