@@ -25,6 +25,11 @@ const testimonials = [
     city: "Coppet, Suiza",
     text: "Laura me ayuda desde 2019 con todos mis trámites. Viviendo en Suiza me es indispensable contar con alguien confiable, con calidad y gran sagacidad para encontrar los documentos personales de mi familia en Argentina. Ella encuentra lo que otros no encuentran, trabajando siempre con mucha pasión y velocidad. Laura ha sido clave en mi trámite de naturalización italiana. La super recomiendo.",
   },
+  {
+    name: "Ivana Pozzuto y Flia",
+    city: "San Isidro, Buenos Aires",
+    text: "Estamos súper agradecidos con el trabajo de Laura, para poder realizar todos los trámites para la obtención de la ciudadanía italiana. Siempre atenta y amable nos guio en cada paso, contesto todas nuestras dudas y nos acompaño en todo el proceso. Recomendamos sin dudas sus servicios.",
+  },
 ];
 
 function TestimonialCard({ t }: { t: typeof testimonials[number] }) {
