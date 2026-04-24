@@ -13,7 +13,7 @@ export function JsonLd() {
     logo: `${SITE_URL}/assets/logo.png`,
     image: `${SITE_URL}/assets/logo.png`,
     telephone: "+5491167061739",
-    email: "Lmelluso@yahoo.it",
+    email: "estudiolmciudadania@gmail.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Vicente López",

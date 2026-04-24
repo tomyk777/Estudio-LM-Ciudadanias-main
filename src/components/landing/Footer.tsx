@@ -95,10 +95,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:Lmelluso@yahoo.it"
+                  href="mailto:estudiolmciudadania@gmail.com"
                   className="text-warm-beige/75 hover:text-gold transition-colors"
                 >
-                  Lmelluso@yahoo.it
+                  estudiolmciudadania@gmail.com
                 </a>
               </li>
               <li className="text-warm-beige/75">Vicente López, Buenos Aires</li>

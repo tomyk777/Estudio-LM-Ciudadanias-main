@@ -70,7 +70,7 @@ export function Contact() {
               </a>
 
               <a
-                href="mailto:Lmelluso@yahoo.it"
+                href="mailto:estudiolmciudadania@gmail.com"
                 className="value-badge hover:border-l-gold transition-colors group"
               >
                 <Mail size={20} className="text-gold flex-shrink-0" />
@@ -79,7 +79,7 @@ export function Contact() {
                     Email
                   </p>
                   <p className="text-charcoal font-semibold text-sm group-hover:text-gold transition-colors break-all">
-                    Lmelluso@yahoo.it
+                    estudiolmciudadania@gmail.com
                   </p>
                 </div>
               </a>
