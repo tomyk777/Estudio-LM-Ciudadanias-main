@@ -40,8 +40,8 @@ const services = [
   },
   {
     icon: CalendarClock,
-    title: "Turnos Consulares",
-    desc: "Gestión y coordinación de turnos ante el Consulado Italiano de Buenos Aires.",
+    title: "Turnos Consulares en todo el país",
+    desc: "Gestión y coordinación de turnos ante los consulados italianos en distintas jurisdicciones del país.",
     flag: "italy",
   },
   {
@@ -91,6 +91,7 @@ function FlagAccent({ flag }: { flag: string }) {
 export function Services() {
   const header = useScrollAnimation();
   const grid = useScrollAnimation();
+  const express = useScrollAnimation();
   const highlight = useScrollAnimation();
 
   return (
@@ -142,6 +143,52 @@ export function Services() {
         </div>
 
         {/* Highlight box */}
+        <div
+          ref={express.ref as React.RefObject<HTMLDivElement>}
+          className={`border-2 bg-white rounded-sm overflow-hidden animate-on-scroll mb-8 ${express.visible ? "is-visible" : ""}`}
+          style={{ borderColor: "hsl(var(--gold))", boxShadow: "var(--shadow-gold)" }}
+        >
+          <div className="flex h-[4px] w-full">
+            <div className="flex-[2]" style={{ background: "#009246" }} />
+            <div className="flex-[2]" style={{ background: "#f3f4f6" }} />
+            <div className="flex-[2]" style={{ background: "#CE2B37" }} />
+          </div>
+          <div className="px-6 py-6 md:px-10 md:py-8">
+            <div className="flex items-center gap-3 mb-3">
+              <CalendarClock size={28} className="text-gold flex-shrink-0" />
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-gold font-semibold mb-1">
+                  Nueva oportunidad
+                </p>
+                <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal">
+                  CIUDADANÍA EXPRESS
+                </h3>
+              </div>
+            </div>
+            <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-4">
+              <strong>Porque tu historia tiene raíces italianas</strong>. Si sos hijo o nieto, podés realizar tu ciudadanía en <strong>45 días</strong> a tan solo <strong>40 minutos de Roma</strong>. Proceso ágil, acompañamiento personalizado, gestión completa de tu expediente y asesoramiento en cada paso. Atención en español. <strong>Consultame ahora</strong>.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["45 días", "40 minutos de Roma", "Atención en español", "Acompañamiento personalizado", "Gestión completa"].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <a
+              href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20por%20Ciudadan%C3%ADa%20Express.%20Sos%20hijo%20o%20nieto%20y%20quiero%20saber%20c%C3%B3mo%20tramitar%20mi%20ciudadan%C3%ADa%20en%2045%20d%C3%ADas%20a%2040%20minutos%20de%20Roma.%20%C2%BFMe%20pas%C3%A1s%20m%C3%A1s%20informaci%C3%B3n%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-flex items-center justify-center mt-6"
+            >
+              Consultar
+            </a>
+          </div>
+        </div>
+
         <div
           ref={highlight.ref as React.RefObject<HTMLDivElement>}
           className={`border-2 bg-white rounded-sm overflow-hidden animate-on-scroll ${highlight.visible ? "is-visible" : ""}`}
