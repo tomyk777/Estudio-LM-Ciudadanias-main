@@ -3,7 +3,7 @@ export function JsonLd() {
 
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LegalService",
     "@id": `${SITE_URL}/#organization`,
     name: "Estudio Integral LM",
     alternateName: "Estudio Integral Laura Melluso",

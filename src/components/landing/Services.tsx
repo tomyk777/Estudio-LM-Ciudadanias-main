@@ -10,9 +10,8 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useState } from "react";
 
-// Italy: green #009246 | white | red #CE2B37
-// Spain: red #AA151B | yellow #F1BF00
 const services = [
   {
     icon: FolderOpen,
@@ -93,6 +92,7 @@ export function Services() {
   const grid = useScrollAnimation();
   const express = useScrollAnimation();
   const highlight = useScrollAnimation();
+  const [showMoreExpress, setShowMoreExpress] = useState(false);
 
   return (
     <section id="servicios" className="py-24 bg-warm-beige">
@@ -145,7 +145,8 @@ export function Services() {
         {/* Highlight box */}
         <div
           ref={express.ref as React.RefObject<HTMLDivElement>}
-          className={`border-2 bg-white rounded-sm overflow-hidden animate-on-scroll mb-8 ${express.visible ? "is-visible" : ""}`}
+          id="CiudadaniaExpress"
+          className={`scroll-mt-28 border-2 bg-white rounded-sm overflow-hidden animate-on-scroll mb-8 ${express.visible ? "is-visible" : ""}`}
           style={{ borderColor: "hsl(var(--gold))", boxShadow: "var(--shadow-gold)" }}
         >
           <div className="flex h-[4px] w-full">
@@ -178,14 +179,29 @@ export function Services() {
                 </span>
               ))}
             </div>
-            <a
-              href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20por%20Ciudadan%C3%ADa%20Express.%20Sos%20hijo%20o%20nieto%20y%20quiero%20saber%20c%C3%B3mo%20tramitar%20mi%20ciudadan%C3%ADa%20en%2045%20d%C3%ADas%20a%2040%20minutos%20de%20Roma.%20%C2%BFMe%20pas%C3%A1s%20m%C3%A1s%20informaci%C3%B3n%3F"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold inline-flex items-center justify-center mt-6"
-            >
-              Consultar
-            </a>
+            <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start md:gap-3">
+              <a
+                href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20por%20Ciudadan%C3%ADa%20Express.%20Sos%20hijo%20o%20nieto%20y%20quiero%20saber%20c%C3%B3mo%20tramitar%20mi%20ciudadan%C3%ADa%20en%2045%20d%C3%ADas%20a%2040%20minutos%20de%20Roma.%20%C2%BFMe%20pas%C3%A1s%20m%C3%A1s%20informaci%C3%B3n%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold text-center mt-6 w-11/12 max-w-xs md:w-auto md:mt-6 mx-auto md:mx-0"
+              >
+                Consultanos
+              </a>
+              <button
+                type="button"
+                onClick={() => setShowMoreExpress((s) => !s)}
+                aria-expanded={showMoreExpress}
+                className="btn-outline-gold text-center mt-4 md:mt-6 w-11/12 max-w-xs md:w-auto mx-auto md:mx-0"
+              >
+                Más info
+              </button>
+            </div>
+            {showMoreExpress && (
+              <p className="mt-4 text-charcoal-mid text-sm md:text-base leading-relaxed">
+                Trabajamos con gente especializada con muchos años de experiencia en Ciudadania Italiana, residencia y gestión de distintos tramites. Instalandote por 45 días solamente, podes obtener tu ansiada ciudadania. coordinacion de alojamiento, acompañamiento en todo el proceso hasta completar tu tramite y que te vayas con pasaporte en mano! No te pierdas esta oportunidad. costos accesibles
+              </p>
+            )}
           </div>
         </div>
 

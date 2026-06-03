@@ -30,6 +30,21 @@ const testimonials = [
     city: "San Isidro, Buenos Aires",
     text: "Estamos súper agradecidos con el trabajo de Laura, para poder realizar todos los trámites para la obtención de la ciudadanía italiana. Siempre atenta y amable nos guio en cada paso, contesto todas nuestras dudas y nos acompaño en todo el proceso. Recomendamos sin dudas sus servicios.",
   },
+  {
+    name: "Leandro Guilhou",
+    city: "CABA",
+    text: "Agradezco muchisimo la atencion, todo excelente. Voy a recomendarlos obviamente!",
+  },
+  {
+    name: "Maria L. Raskovsky",
+    city: "San Miguel, Buenos Aires",
+    text: "Quiero agradecerles la infinita paciencia y su gran trabajo. Buscaron las mil vueltas para que esto nos salga!! De verdad los voy a recontra recomendar porque su trabajo fue impecable! Mil mil gracias, estamos muy contentos por esto. Mis hijos ya son ciudadanos italianos.",
+  },
+  {
+    name: "Carolina Montera",
+    city: "Almagro, Buenos Aires",
+    text: "Hola queria avisarles que salio todo bien ! Muchas gracias por todo el apoyo!! Hicieron que la gestion fuera muy sencilla.",
+  },
 ];
 
 function TestimonialCard({ t }: { t: typeof testimonials[number] }) {

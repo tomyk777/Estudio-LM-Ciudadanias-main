@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "Estudio Integral LM — Ciudadanía Italiana y Española",
+    default: "Ciudadanía Italiana y Española | Estudio Integral LM",
     template: "%s | Estudio Integral LM",
   },
 
@@ -48,18 +48,23 @@ export const metadata: Metadata = {
     "carpeta ciudadanía española",
     "búsqueda de actas Italia",
     "apostilla de documentos",
-    "traducción pública italiano",
     "turnos consulado italiano Buenos Aires",
     "ciudadanía por matrimonio Italia",
     "ciudadanía italiana por descendencia",
     "AIRE inscripción",
     "pasaporte italiano",
-    "legalización de documentos",
-    "curso de italiano",
-    "Estudio Integral LM",
-    "Laura Melluso",
-    "gestoría Vicente López",
-    "asesoría ciudadanía online",
+    "ciudadanía italiana por descendencia Argentina",
+"cómo tramitar ciudadanía italiana Argentina",
+"gestoría ciudadanía italiana Buenos Aires",
+"armado carpeta ciudadanía italiana",
+"búsqueda actas nacimiento Italia",
+"traducción certificada italiano",
+"turnos consulado italiano Buenos Aires",
+"inscripción AIRE Argentina",
+"ciudadanía italiana sin turno consular",
+"reconocimiento ciudadanía española Argentina",
+"asesoría ciudadanía online",
+"CIC carta identidad italiana Argentina",
   ],
 
   authors: [{ name: "Laura Karina Melluso", url: SITE_URL }],
@@ -82,7 +87,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 
   openGraph: {
-    title: "Estudio Integral LM — Ciudadanía Italiana y Española",
+    title: "Ciudadanía Italiana y Española | Estudio Integral LM",
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
