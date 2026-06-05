@@ -62,11 +62,12 @@ export function Hero() {
             href="https://wa.me/5491167061739?text=Hola%20Laura!%20Estoy%20interesado%2Fa%20en%20iniciar%20mi%20tr%C3%A1mite%20de%20ciudadan%C3%ADa.%20%C2%BFPodr%C3%ADas%20darme%20m%C3%A1s%20informaci%C3%B3n%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold md:order-2"
+            className="btn-outline-gold border-warm-white/50 text-warm-white hover:border-gold md:order-1"
           >
             Asesoría Online
           </a>
-          <a href="#CiudadaniaExpress" className="btn-outline-gold border-warm-white/50 text-warm-white hover:border-gold md:order-1">
+          <a href="#CiudadaniaExpress" className="btn-express md:order-2">
+              <span className="shimmer" aria-hidden="true" />
             Ciudadanía Express
           </a>
           <a href="#servicios" className="btn-outline-gold border-warm-white/50 text-warm-white hover:border-gold md:order-3">

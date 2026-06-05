@@ -195,3 +195,74 @@
   .delay-500 { transition-delay: 500ms; }
   .delay-600 { transition-delay: 600ms; }
 }
+
+/* ===== CIUDADANÍA EXPRESS — Opción C ===== */
+  @keyframes shimmer-express {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(250%); }
+    100% { transform: translateX(250%); }
+  }
+
+  @keyframes pulse-ring-express {
+    0%   { transform: scale(1);    opacity: 0.9; }
+    70%  { transform: scale(1.14); opacity: 0; }
+    100% { transform: scale(1.14); opacity: 0; }
+  }
+
+  .btn-express {
+  @apply inline-flex items-center justify-center gap-2 px-10 py-4 font-semibold text-sm tracking-widest uppercase transition-all duration-300;
+  position: relative;
+  /* Sacamos overflow: hidden del botón mismo */
+  background: var(--gradient-gold);
+  color: hsl(var(--charcoal));
+  box-shadow: var(--shadow-gold);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.15em;
+}
+
+@media (min-width: 640px) {
+  .btn-express {
+    padding: 1.125rem 3rem; /* Larger padding for desktops */
+    font-size: 0.95rem;     /* Slightly larger font size */
+    letter-spacing: 0.18em;
+  }
+}
+
+.btn-express:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 35px -2px hsl(38 65% 48% / 0.6);
+}
+
+/* Shimmer va en un wrapper interno para no necesitar overflow:hidden en el padre */
+.btn-express span.shimmer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.btn-express span.shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 235, 150, 0.55),
+    transparent
+  );
+  animation: shimmer-express 3.5s ease-in-out infinite;
+}
+
+/* Pulse ring — ahora sí puede salir del borde */
+.btn-express::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1.5px solid hsl(var(--gold-light));
+  pointer-events: none;
+  animation: pulse-ring-express 2.4s ease-out infinite;
+}

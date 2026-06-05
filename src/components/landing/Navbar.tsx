@@ -75,7 +75,7 @@ export function Navbar() {
           ))}
           <a
             href="#CiudadaniaExpress"
-            className="btn-outline-gold border-warm-white/50 text-warm-white hover:border-gold text-xs px-6 py-2.5"
+            className="btn-gold text-xs px-6 py-2.5"
           >
             Ciudadanía Express
           </a>
@@ -83,7 +83,7 @@ export function Navbar() {
             href="https://wa.me/5491167061739?text=Hola%20Laura!%20Me%20gustar%C3%ADa%20solicitar%20una%20asesor%C3%ADa%20online%20sobre%20ciudadan%C3%ADa.%20%C2%BFPodr%C3%ADamos%20coordinar%20una%20consulta%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold text-xs px-6 py-2.5"
+            className="btn-outline-gold border-warm-white/50 text-warm-white hover:border-gold text-xs px-6 py-2.5 "
           >
             Asesoría Online
           </a>
@@ -141,7 +141,7 @@ export function Navbar() {
           <a
             href="#CiudadaniaExpress"
             onClick={() => setOpen(false)}
-            className="btn-outline-gold border-warm-white/50 text-warm-white hover:border-gold text-center text-xs px-8 py-3 transition-all duration-300"
+            className="btn-gold text-center text-xs px-8 py-3 transition-all duration-300"
             style={{
               transitionDelay: open ? `${navLinks.length * 60}ms` : "0ms",
               opacity: open ? 1 : 0,
@@ -154,7 +154,7 @@ export function Navbar() {
             href="https://wa.me/5491167061739?text=Hola%20Laura!%20Me%20gustar%C3%ADa%20solicitar%20una%20asesor%C3%ADa%20online%20sobre%20ciudadan%C3%ADa.%20%C2%BFPodr%C3%ADamos%20coordinar%20una%20consulta%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold text-center text-xs px-8 py-3 transition-all duration-300"
+            className="btn-outline-gold border-warm-white/50 text-warm-white hover:border-gold text-center text-xs px-8 py-3 transition-all duration-300"
             onClick={() => setOpen(false)}
             style={{
               transitionDelay: open ? `${(navLinks.length + 1) * 60}ms` : "0ms",
