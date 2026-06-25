@@ -10,7 +10,7 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const services = [
   {
@@ -93,6 +93,8 @@ export function Services() {
   const express = useScrollAnimation();
   const highlight = useScrollAnimation();
   const [showMoreExpress, setShowMoreExpress] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
 
   return (
     <section id="servicios" className="py-24 bg-warm-beige">
@@ -155,53 +157,96 @@ export function Services() {
             <div className="flex-[2]" style={{ background: "#CE2B37" }} />
           </div>
           <div className="px-6 py-6 md:px-10 md:py-8">
-            <div className="flex items-center gap-3 mb-3">
-              <CalendarClock size={28} className="text-gold flex-shrink-0" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Left column — content */}
               <div>
-                <p className="text-xs uppercase tracking-[0.28em] text-gold font-semibold mb-1">
-                  Nueva oportunidad
+                <div className="flex items-center gap-3 mb-3">
+                  <CalendarClock size={28} className="text-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.28em] text-gold font-semibold mb-1">
+                      Nueva oportunidad
+                    </p>
+                    <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal">
+                      CIUDADANÍA EXPRESS
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-4">
+                  <strong>Porque tu historia tiene raíces italianas</strong>. Si sos hijo o nieto, podés realizar tu ciudadanía en <strong>45 días</strong> a tan solo <strong>40 minutos de Roma</strong>. Proceso ágil, acompañamiento personalizado, gestión completa de tu expediente y asesoramiento en cada paso. Atención en español. <strong>Consultame ahora</strong>.
                 </p>
-                <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal">
-                  CIUDADANÍA EXPRESS
-                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {["45 días", "40 minutos de Roma", "Atención en español", "Acompañamiento personalizado", "Gestión completa"].map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start md:gap-3">
+                  <a
+                    href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20por%20Ciudadan%C3%ADa%20Express.%20Sos%20hijo%20o%20nieto%20y%20quiero%20saber%20c%C3%B3mo%20tramitar%20mi%20ciudadan%C3%ADa%20en%2045%20d%C3%ADas%20a%2040%20minutos%20de%20Roma.%20%C2%BFMe%20pas%C3%A1s%20m%C3%A1s%20informaci%C3%B3n%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-gold text-center mt-6 w-11/12 max-w-xs md:w-auto md:mt-6 mx-auto md:mx-0"
+                  >
+                    Consultanos
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setShowMoreExpress((s) => !s)}
+                    aria-expanded={showMoreExpress}
+                    className="btn-outline-gold text-center mt-4 md:mt-6 w-11/12 max-w-xs md:w-auto mx-auto md:mx-0"
+                  >
+                    Más info
+                  </button>
+                </div>
+                {showMoreExpress && (
+                  <p className="mt-4 text-charcoal-mid text-sm md:text-base leading-relaxed">
+                    Trabajamos con gente especializada con muchos años de experiencia en Ciudadania Italiana, residencia y gestión de distintos tramites. Instalandote por 45 días solamente, podes obtener tu ansiada ciudadania. coordinacion de alojamiento, acompañamiento en todo el proceso hasta completar tu tramite y que te vayas con pasaporte en mano! No te pierdas esta oportunidad. costos accesibles
+                  </p>
+                )}
+              </div>
+
+              {/* Right column — video */}
+              <div className="relative aspect-square w-full max-w-md mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-lg">
+                <video
+                  ref={videoRef}
+                  src="/assets/videos/27-Comprimido.mp4"
+                  className="w-full h-full object-cover"
+                  playsInline
+                  preload="metadata"
+                  controls={playing}
+                  onEnded={() => setPlaying(false)}
+                  onPause={() => setPlaying(false)}
+                  onPlay={() => setPlaying(true)}
+                />
+                {/* Play overlay */}
+                {!playing && (
+                  <button
+                    type="button"
+                    aria-label="Reproducir video"
+                    onClick={() => {
+                      if (videoRef.current) {
+                        videoRef.current.play();
+                        setPlaying(true);
+                      }
+                    }}
+                    className="absolute inset-0 flex items-center justify-center bg-black/25 transition-colors hover:bg-black/35 cursor-pointer"
+                  >
+                    <span
+                      className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-xl transition-transform hover:scale-110"
+                      style={{ background: "var(--gradient-gold)" }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-9 md:h-9 text-white ml-1">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
-            <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-4">
-              <strong>Porque tu historia tiene raíces italianas</strong>. Si sos hijo o nieto, podés realizar tu ciudadanía en <strong>45 días</strong> a tan solo <strong>40 minutos de Roma</strong>. Proceso ágil, acompañamiento personalizado, gestión completa de tu expediente y asesoramiento en cada paso. Atención en español. <strong>Consultame ahora</strong>.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["45 días", "40 minutos de Roma", "Atención en español", "Acompañamiento personalizado", "Gestión completa"].map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start md:gap-3">
-              <a
-                href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20por%20Ciudadan%C3%ADa%20Express.%20Sos%20hijo%20o%20nieto%20y%20quiero%20saber%20c%C3%B3mo%20tramitar%20mi%20ciudadan%C3%ADa%20en%2045%20d%C3%ADas%20a%2040%20minutos%20de%20Roma.%20%C2%BFMe%20pas%C3%A1s%20m%C3%A1s%20informaci%C3%B3n%3F"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold text-center mt-6 w-11/12 max-w-xs md:w-auto md:mt-6 mx-auto md:mx-0"
-              >
-                Consultanos
-              </a>
-              <button
-                type="button"
-                onClick={() => setShowMoreExpress((s) => !s)}
-                aria-expanded={showMoreExpress}
-                className="btn-outline-gold text-center mt-4 md:mt-6 w-11/12 max-w-xs md:w-auto mx-auto md:mx-0"
-              >
-                Más info
-              </button>
-            </div>
-            {showMoreExpress && (
-              <p className="mt-4 text-charcoal-mid text-sm md:text-base leading-relaxed">
-                Trabajamos con gente especializada con muchos años de experiencia en Ciudadania Italiana, residencia y gestión de distintos tramites. Instalandote por 45 días solamente, podes obtener tu ansiada ciudadania. coordinacion de alojamiento, acompañamiento en todo el proceso hasta completar tu tramite y que te vayas con pasaporte en mano! No te pierdas esta oportunidad. costos accesibles
-              </p>
-            )}
           </div>
         </div>
 

@@ -89,6 +89,13 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   }
+  
+  video:fullscreen {
+    object-fit: contain;
+  }
+  video:-webkit-full-screen {
+    object-fit: contain;
+  }
 }
 
 @layer components {
