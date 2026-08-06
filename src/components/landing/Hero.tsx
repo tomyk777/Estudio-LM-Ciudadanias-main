@@ -23,13 +23,15 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-32 flex flex-col items-center">
         <Image
-          src="/assets/logo.png"
-          alt="Estudio Integral LM"
-          width={224}
-          height={224}
-          sizes="(max-width: 768px) 176px, 224px"
-          quality={65}
-          className="h-44 md:h-56 w-auto object-contain mb-8 animate-fade-in drop-shadow-lg"
+           src="/assets/logo.png"
+           alt="Estudio Integral LM"
+           width={224}
+           height={224}
+           priority
+           fetchPriority="high"
+           sizes="(max-width: 768px) 176px, 224px"
+           quality={60}
+           className="h-44 md:h-56 w-auto object-contain mb-8 animate-fade-in drop-shadow-lg"
         />
 
         <p className="section-label text-gold-light mb-6 animate-fade-in">

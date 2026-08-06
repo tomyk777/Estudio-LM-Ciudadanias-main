@@ -37,6 +37,7 @@ export function Footer() {
               alt="Estudio Integral LM"
               width={200}
               height={112}
+              loading="lazy"
               sizes="(max-width: 768px) 160px, 200px"
               quality={65}
               className="h-28 w-auto object-contain"

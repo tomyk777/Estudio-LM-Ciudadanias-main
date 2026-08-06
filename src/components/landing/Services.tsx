@@ -220,7 +220,7 @@ export function Services() {
                   src="/assets/videos/27-Comprimido.mp4"
                   className="w-full h-full object-cover"
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   controls={playing}
                   onEnded={() => setPlaying(false)}
                   onPause={() => setPlaying(false)}

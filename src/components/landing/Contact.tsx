@@ -156,7 +156,7 @@ export function Contact() {
               width={448}
               height={448}
               sizes="(max-width: 1024px) 90vw, 448px"
-              quality={65}
+              quality={55}
               className="w-full max-w-md object-contain drop-shadow-2xl"
             />
           </div>

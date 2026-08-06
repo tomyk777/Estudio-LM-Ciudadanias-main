@@ -54,8 +54,9 @@ export function Navbar() {
             alt="Estudio Integral LM"
             width={80}
             height={80}
+            loading="lazy"
             sizes="(max-width: 768px) 56px, 80px"
-            quality={65}
+            quality={60}
             className={`w-auto object-contain transition-all duration-500 ${
               scrolled ? "h-10 md:h-14" : "h-14 md:h-20"
             }`}
