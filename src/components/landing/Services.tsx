@@ -8,6 +8,7 @@ import {
   CalendarClock,
   BadgeCheck,
   HeartHandshake,
+  Plane,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useState, useRef } from "react";
@@ -87,12 +88,15 @@ function FlagAccent({ flag }: { flag: string }) {
   );
 }
 
+
 export function Services() {
   const header = useScrollAnimation();
   const grid = useScrollAnimation();
   const express = useScrollAnimation();
   const highlight = useScrollAnimation();
+  const usaVisa = useScrollAnimation();
   const [showMoreExpress, setShowMoreExpress] = useState(false);
+  const [showMoreUSA, setShowMoreUSA] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -250,9 +254,10 @@ export function Services() {
           </div>
         </div>
 
+        {/* ¿Ya sos ciudadano italiano? */}
         <div
           ref={highlight.ref as React.RefObject<HTMLDivElement>}
-          className={`border-2 bg-white rounded-sm overflow-hidden animate-on-scroll ${highlight.visible ? "is-visible" : ""}`}
+          className={`border-2 bg-white rounded-sm overflow-hidden animate-on-scroll mb-8 ${highlight.visible ? "is-visible" : ""}`}
           style={{ borderColor: "hsl(var(--gold))", boxShadow: "var(--shadow-gold)" }}
         >
           {/* Italian flag accent bar */}
@@ -283,6 +288,83 @@ export function Services() {
             </div>
             <a
               href="https://wa.me/5491167061739?text=Hola%20Laura!%20Ya%20soy%20ciudadano%2Fa%20italiano%2Fa%20y%20necesito%20ayuda%20con%20tr%C3%A1mites%20post-ciudadan%C3%ADa%20(AIRE%2C%20pasaporte%2C%20etc.).%20%C2%BFMe%20pod%C3%A9s%20asesorar%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-block"
+            >
+              Consultanos
+            </a>
+          </div>
+        </div>
+
+        {/* NUEVO: Embajada de Estados Unidos — Visa B1/B2 y Permiso ESTA */}
+        <div
+          ref={usaVisa.ref as React.RefObject<HTMLDivElement>}
+          className={`relative border-2 bg-white rounded-sm overflow-hidden animate-on-scroll mb-8 ${usaVisa.visible ? "is-visible" : ""}`}
+          style={{ borderColor: "hsl(var(--gold))", boxShadow: "var(--shadow-gold)" }}
+        >
+          {/* Decorative icons — right side */}
+          <img
+            src="/assets/icons/usa-flag-circle.svg"
+            alt=""
+            aria-hidden="true"
+            className="absolute top-4 right-4 w-10 h-10 md:w-14 md:h-14 opacity-15 pointer-events-none select-none"
+          />
+          <img
+            src="/assets/icons/statue-of-liberty.svg"
+            alt=""
+            aria-hidden="true"
+            className="absolute bottom-4 right-4 h-14 md:h-20 opacity-10 pointer-events-none select-none"
+          />
+
+          <div className="px-6 py-6 md:px-10 md:py-8">
+            <div className="flex items-center gap-3 mb-3">
+              <Plane size={28} className="text-gold flex-shrink-0" />
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-gold font-semibold mb-1">
+                  Nueva gestión
+                </p>
+                <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal">
+                  Embajada de Estados Unidos: Visa B1/B2 y Permiso ESTA
+                </h3>
+              </div>
+            </div>
+            <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-4">
+              Gestionamos tu <strong>Visa B1/B2</strong> y el <strong>Permiso ESTA</strong> para que puedas viajar a Estados Unidos sin complicaciones. Te acompañamos en cada paso del proceso.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
+              <div className="bg-gold/5 border border-gold/20 rounded-sm p-4 md:p-5">
+                <h4 className="font-serif text-base md:text-lg font-semibold text-charcoal mb-2">
+                  VISA B1/B2
+                </h4>
+                <p className="text-charcoal-mid text-sm md:text-base leading-relaxed">
+                  La visa B1/B2 es una visa de no inmigrante que permite viajar a Estados Unidos por motivos de turismo, vacaciones, visitas a familiares o amigos, tratamientos médicos, reuniones de negocios, capacitaciones, congresos y otros viajes temporales.
+                </p>
+              </div>
+              <div className="bg-gold/5 border border-gold/20 rounded-sm p-4 md:p-5">
+                <h4 className="font-serif text-base md:text-lg font-semibold text-charcoal mb-2">
+                  PERMISO E.S.T.A.
+                </h4>
+                <p className="text-charcoal-mid text-sm md:text-base leading-relaxed">
+                  Electronic System for Travel Authorization: es una autorización electrónica de viaje destinada a ciudadanos de países que participan del Programa de Exención de Visa —es decir, vos como ciudadano italiano—. Permite ingresar a Estados Unidos por turismo o negocios por estadías de hasta 90 días, siempre que se cumplan los requisitos del programa.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-5">
+              {["Turismo y negocios", "Hasta 90 días", "Ciudadanos italianos", "Programa de Exención de Visa"].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20por%20la%20Visa%20B1%2FB2%20o%20el%20Permiso%20ESTA%20para%20viajar%20a%20Estados%20Unidos.%20%C2%BFMe%20pas%C3%A1s%20m%C3%A1s%20informaci%C3%B3n%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold inline-block"
