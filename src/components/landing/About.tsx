@@ -12,7 +12,7 @@ const values = [
 
 const team = [
   { name: "Laura K. Melluso", role: "Fundadora & Gestora Principal" },
-  { name: "Domingo G. Florio", role: "Asistente de Gestión" },
+  { name: "Gabriel Florio", role: "Asistente de Gestión" },
 ];
 
 const valDelays = ["delay-100", "delay-200", "delay-300", "delay-400"];
