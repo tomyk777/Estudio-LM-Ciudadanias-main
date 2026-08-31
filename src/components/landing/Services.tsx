@@ -95,6 +95,7 @@ export function Services() {
   const express = useScrollAnimation();
   const highlight = useScrollAnimation();
   const usaVisa = useScrollAnimation();
+  const translations = useScrollAnimation();
   const [showMoreExpress, setShowMoreExpress] = useState(false);
   const [showMoreUSA, setShowMoreUSA] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -288,6 +289,55 @@ export function Services() {
             </div>
             <a
               href="https://wa.me/5491167061739?text=Hola%20Laura!%20Ya%20soy%20ciudadano%2Fa%20italiano%2Fa%20y%20necesito%20ayuda%20con%20tr%C3%A1mites%20post-ciudadan%C3%ADa%20(AIRE%2C%20pasaporte%2C%20etc.).%20%C2%BFMe%20pod%C3%A9s%20asesorar%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-block"
+            >
+              Consultanos
+            </a>
+          </div>
+        </div>
+
+        {/* TRADUCCIONES */}
+        <div
+          ref={translations.ref as React.RefObject<HTMLDivElement>}
+          className={`border-2 bg-white rounded-sm overflow-hidden animate-on-scroll mb-8 ${translations.visible ? "is-visible" : ""}`}
+          style={{ borderColor: "hsl(var(--gold))", boxShadow: "var(--shadow-gold)" }}
+        >
+          {/* Italian flag accent bar */}
+          <div className="flex h-[4px] w-full">
+            <div className="flex-1" style={{ background: "#009246" }} />
+            <div className="flex-1" style={{ background: "#f3f4f6" }} />
+            <div className="flex-1" style={{ background: "#CE2B37" }} />
+          </div>
+          <div className="px-6 py-6 md:px-10 md:py-8">
+            <div className="flex items-center gap-3 mb-3">
+              <Languages size={28} className="text-gold flex-shrink-0" />
+              <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal">
+                TRADUCCIONES
+              </h3>
+            </div>
+            <p className="text-charcoal-mid text-base md:text-lg leading-relaxed mb-4">
+              Realizamos traducciones públicas certificadas de todo tipo de documentos para su validez legal y presentación oficial, brindando soluciones integrales tanto a particulares como a empresas y corporaciones.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-5">
+              {[
+                "EMPRESARIALES",
+                "JUDICIALES",
+                'TÍTULOS DE ESTUDIO PARA "DICHIARAZIONE DI VALORE"',
+                "CERTIFICADOS MÉDICOS",
+                "PATENTE DE INVENCIÓN"
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium uppercase tracking-wider"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <a
+              href="https://wa.me/5491167061739?text=Hola%20Laura!%20Necesito%20consultar%20por%20servicios%20de%20TRADUCCIONES."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold inline-block"
