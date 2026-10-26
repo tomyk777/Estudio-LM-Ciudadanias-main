@@ -420,7 +420,7 @@ export function Services() {
               <div className="relative aspect-square w-full max-w-md mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-lg">
                 <video
                   ref={spanishVideoRef}
-                  src="/assets/videos/española.mp4"
+                  src="/assets/videos/espanola.mp4"
                   className="w-full h-full object-cover"
                   playsInline
                   preload="none"
@@ -429,7 +429,6 @@ export function Services() {
                   onPause={() => setSpanishPlaying(false)}
                   onPlay={() => setSpanishPlaying(true)}
                 >
-                  <source src="/assets/videos/española.mp4" type="video/mp4" />
                   <source src="/assets/videos/espanola.mp4" type="video/mp4" />
                 </video>
                 {/* Play overlay */}
