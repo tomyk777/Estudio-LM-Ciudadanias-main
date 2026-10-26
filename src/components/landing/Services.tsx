@@ -9,6 +9,7 @@ import {
   BadgeCheck,
   HeartHandshake,
   Plane,
+  Scale,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useState, useRef } from "react";
@@ -96,10 +97,13 @@ export function Services() {
   const highlight = useScrollAnimation();
   const usaVisa = useScrollAnimation();
   const translations = useScrollAnimation();
+  const spanishResidency = useScrollAnimation();
   const [showMoreExpress, setShowMoreExpress] = useState(false);
   const [showMoreUSA, setShowMoreUSA] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
+  const spanishVideoRef = useRef<HTMLVideoElement>(null);
+  const [spanishPlaying, setSpanishPlaying] = useState(false);
 
   return (
     <section id="servicios" className="py-24 bg-warm-beige">
@@ -344,6 +348,115 @@ export function Services() {
             >
               Consultanos
             </a>
+          </div>
+        </div>
+
+        {/* CIUDADANÍA ESPAÑOLA POR RESIDENCIA */}
+        <div
+          ref={spanishResidency.ref as React.RefObject<HTMLDivElement>}
+          id="CiudadaniaEspanola"
+          className={`scroll-mt-28 border-2 bg-white rounded-sm overflow-hidden animate-on-scroll mb-8 ${spanishResidency.visible ? "is-visible" : ""}`}
+          style={{ borderColor: "hsl(var(--gold))", boxShadow: "var(--shadow-gold)" }}
+        >
+          {/* Spanish flag accent bar */}
+          <div className="flex h-[4px] w-full">
+            <div className="flex-1" style={{ background: "#AA151B" }} />
+            <div className="flex-[2]" style={{ background: "#F1BF00" }} />
+            <div className="flex-1" style={{ background: "#AA151B" }} />
+          </div>
+          <div className="px-6 py-6 md:px-10 md:py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Left column — content */}
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <Scale size={28} className="text-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.28em] text-gold font-semibold mb-1">
+                      Nueva gestión
+                    </p>
+                    <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal">
+                      CIUDADANÍA ESPAÑOLA POR RESIDENCIA
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-3">
+                  <strong>¿Querés quedarte legalmente en España, pero no sabés qué trámite te corresponde?</strong> No existe una única opción, y cada caso tiene su camino.
+                </p>
+                <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-3">
+                  Si te vas a trabajar por tu cuenta, o en cambio vas a trabajar en relación de dependencia, si estás viviendo hace años en España... <em>¿cuál es tu situación?</em>
+                </p>
+                <p className="text-charcoal-mid text-sm md:text-base leading-relaxed mb-4">
+                  Trabajo con gente experta en el tema (<strong>abogadas especialistas en extranjería y migración</strong>) que pueden asesorarte y eventualmente gestionar tu residencia. ¡No dudes en consultarme! Los costos son muy accesibles y siempre es mejor contar con personas que saben y no perder tiempo en el camino intentando hacerlo solo/a.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {[
+                    "Asesoramiento legal",
+                    "Extranjería y migración",
+                    "Residencia legal",
+                    "Costos accesibles",
+                    "Acompañamiento personalizado",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center text-xs md:text-sm px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-charcoal font-medium"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div>
+                  <a
+                    href="https://wa.me/5491167061739?text=Hola%20Laura!%20Quiero%20consultar%20por%20Ciudadan%C3%ADa%20Espa%C3%B1ola%20por%20Residencia%20y%20tr%C3%A1mites%20de%20extranjer%C3%ADa.%20%C2%BFMe%20pod%C3%A9s%20asesorar%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-gold inline-block"
+                  >
+                    Consultanos
+                  </a>
+                </div>
+              </div>
+
+              {/* Right column — video */}
+              <div className="relative aspect-square w-full max-w-md mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-lg">
+                <video
+                  ref={spanishVideoRef}
+                  src="/assets/videos/española.mp4"
+                  className="w-full h-full object-cover"
+                  playsInline
+                  preload="none"
+                  controls={spanishPlaying}
+                  onEnded={() => setSpanishPlaying(false)}
+                  onPause={() => setSpanishPlaying(false)}
+                  onPlay={() => setSpanishPlaying(true)}
+                >
+                  <source src="/assets/videos/española.mp4" type="video/mp4" />
+                  <source src="/assets/videos/espanola.mp4" type="video/mp4" />
+                </video>
+                {/* Play overlay */}
+                {!spanishPlaying && (
+                  <button
+                    type="button"
+                    aria-label="Reproducir video"
+                    onClick={() => {
+                      if (spanishVideoRef.current) {
+                        spanishVideoRef.current.play();
+                        setSpanishPlaying(true);
+                      }
+                    }}
+                    className="absolute inset-0 flex items-center justify-center bg-black/25 transition-colors hover:bg-black/35 cursor-pointer"
+                  >
+                    <span
+                      className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-xl transition-transform hover:scale-110"
+                      style={{ background: "var(--gradient-gold)" }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-9 md:h-9 text-white ml-1">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
